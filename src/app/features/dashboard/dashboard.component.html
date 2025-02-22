@@ -1,0 +1,51 @@
+<div class="dashboard-container">
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <nav class="navbar">
+      <div class="logo">Portfolio Manager</div>
+      <div class="auth-buttons">
+        <button class="btn login-btn" (click)="navigateToLogin()">
+          Sign In
+        </button>
+        <button class="btn register-btn" (click)="navigateToRegister()">
+          Sign Up
+        </button>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <h1>Manage Your Portfolio Like a Pro</h1>
+      <p>Track, analyze, and optimize your investments in one place</p>
+    </div>
+  </header>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h2>Key Features</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <i class="fas fa-chart-line"></i>
+        <h3>Portfolio Tracking</h3>
+        <p>Real-time monitoring of your investments</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-analytics"></i>
+        <h3>Advanced Analytics</h3>
+        <p>Detailed insights and performance metrics</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Secure Platform</h3>
+        <p>Enterprise-grade security for your data</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <h2>Start Managing Your Portfolio Today</h2>
+    <p>Join thousands of investors who trust our platform</p>
+    <button class="btn cta-btn" (click)="navigateToRegister()">
+      Get Started
+    </button>
+  </section>
+</div>

@@ -1,0 +1,16 @@
+<nav class="sidebar">
+  <div class="sidebar-content">
+    <div class="menu-items">
+      @for (item of menuItems; track item.route) {
+      <button
+        class="menu-item"
+        [class.active]="router.url === item.route"
+        (click)="navigate(item.route)"
+      >
+        <i [class]="item.icon"></i>
+        <span>{{ item.label }}</span>
+      </button>
+      }
+    </div>
+  </div>
+</nav>

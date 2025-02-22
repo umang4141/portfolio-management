@@ -1,0 +1,58 @@
+<div class="login-container">
+  <div class="background-overlay"></div>
+  <div class="animated-bg"></div>
+
+  <a class="home-link" (click)="navigateToHome()">
+    <i class="fas fa-arrow-left"></i> Back
+  </a>
+
+  <div class="login-box">
+    <h2>Welcome Back!</h2>
+    <p class="subtitle">Sign in to continue</p>
+
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div class="floating-input">
+        <input
+          type="text"
+          id="username"
+          name="username"
+          [(ngModel)]="username"
+          required
+          placeholder=" "
+          #usernameInput="ngModel"
+          [class.is-invalid]="usernameInput.invalid && usernameInput.touched"
+        />
+        <label for="username">Username</label>
+      </div>
+
+      <div class="floating-input">
+        <input
+          type="password"
+          id="password"
+          name="password"
+          [(ngModel)]="password"
+          required
+          placeholder=" "
+          #passwordInput="ngModel"
+          [class.is-invalid]="passwordInput.invalid && passwordInput.touched"
+        />
+        <label for="password">Password</label>
+      </div>
+
+      <div *ngIf="error" class="error-message">{{ error }}</div>
+
+      <button
+        type="submit"
+        [disabled]="loginForm.invalid || isLoading"
+        class="submit-btn"
+      >
+        {{ isLoading ? "Signing In..." : "Sign In" }}
+      </button>
+    </form>
+
+    <div class="register-link">
+      New to Portfolio Management?
+      <a routerLink="/auth/register">Create an Account</a>
+    </div>
+  </div>
+</div>
