@@ -1,0 +1,62 @@
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease;
+}
+
+.app-container.dark-theme {
+  background-color: #2c3e50;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  margin-top: 64px;
+  margin-bottom: 60px;
+}
+
+.content-area {
+  flex: 1;
+  padding: 2rem;
+  background: #f8fafc;
+  overflow-y: auto;
+  transition: background-color 0.3s ease;
+}
+
+.content-area.dark-theme {
+  background: #1a1a1a;
+}
+
+.theme-toggle-btn {
+  position: absolute;
+  top: 33px;
+  right: 230px; /* Adjusted position */
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #667eea;
+  color: white;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #5a6fe4;
+}
+
+/* Additional styles for dark theme */
+.app-container.dark-theme .header,
+.app-container.dark-theme .sidebar,
+.app-container.dark-theme .footer,
+.app-container.dark-theme .content-area {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.app-container.dark-theme .header h1,
+.app-container.dark-theme .sidebar a,
+.app-container.dark-theme .footer p {
+  color: white;
+}

@@ -16,6 +16,7 @@ export class LoginComponent {
   password = '';
   error = '';
   isLoading = false;
+  isDarkTheme = false;
 
   constructor(private authService: AuthService, private router: Router) {}
 
@@ -31,7 +32,6 @@ export class LoginComponent {
     this.authService.login(this.username, this.password).subscribe({
       next: () => {
         this.isLoading = false;
-        alert('Successfully logged in');
         this.router.navigate(['/app/dashboard']);
       },
       error: (err) => {
@@ -43,5 +43,9 @@ export class LoginComponent {
 
   navigateToHome(): void {
     this.router.navigate(['/']);
+  }
+
+  toggleTheme(): void {
+    this.isDarkTheme = !this.isDarkTheme;
   }
 }

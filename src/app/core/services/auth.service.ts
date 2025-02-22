@@ -16,7 +16,7 @@ interface User {
   providedIn: 'root',
 })
 export class AuthService {
-  private currentUserSubject = new BehaviorSubject<User | null>(null);
+  public currentUserSubject = new BehaviorSubject<User | null>(null);
   currentUser$ = this.currentUserSubject.asObservable();
   private users: User[] = [];
   private isAuthenticated = new BehaviorSubject<boolean>(false);
@@ -86,7 +86,6 @@ export class AuthService {
 
   logout(): void {
     localStorage.removeItem('token');
-    localStorage.removeItem('user');
     localStorage.removeItem('currentUser');
     this.isAuthenticated.next(false);
     this.currentUserSubject.next(null);

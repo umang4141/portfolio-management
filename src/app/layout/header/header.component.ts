@@ -9,9 +9,14 @@ import { AuthService } from '../../core/services/auth.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(public authService: AuthService, private router: Router) {}
 
   logout(): void {
     this.authService.logout();
+  }
+
+  getUsername(): string | null {
+    const user = this.authService.currentUserSubject.value;
+    return user ? user.username : null;
   }
 }

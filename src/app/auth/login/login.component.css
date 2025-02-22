@@ -1,12 +1,15 @@
 .login-container {
+  position: relative;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  position: relative;
-  background: linear-gradient(135deg, #1a2980 0%, #26d0ce 100%);
-  overflow: hidden;
+  background-color: #f8f9fa;
+  transition: background-color 0.3s ease;
+}
+
+.login-container.dark-theme {
+  background-color: #2c3e50;
 }
 
 .background-overlay {
@@ -15,25 +18,17 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(
-    circle at center,
-    transparent 0%,
-    rgba(0, 0, 0, 0.2) 100%
-  );
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 
 .animated-bg {
   position: absolute;
-  top: -50%;
-  left: -50%;
-  right: -50%;
-  bottom: -50%;
-  background: linear-gradient(
-    45deg,
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0.05) 100%
-  );
-  animation: rotate 20s linear infinite;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   z-index: 0;
 }
 
@@ -82,16 +77,13 @@
 }
 
 .home-link {
-  position: fixed;
-  top: 2rem;
-  left: 2rem;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
   color: white;
   text-decoration: none;
-  font-size: 1rem;
-  cursor: pointer;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-  z-index: 2;
+  font-size: 1.2rem;
 }
 
 .home-link:hover {
@@ -149,14 +141,15 @@
 }
 
 .login-box {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 3rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 2;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
-  position: relative;
-  z-index: 1;
+  text-align: center;
 }
 
 h2 {
@@ -208,34 +201,23 @@ input.is-invalid {
 }
 
 .error-message {
-  color: #dc3545;
-  text-align: center;
-  margin: 1rem 0;
-  font-size: 0.875rem;
+  color: red;
+  margin-bottom: 1rem;
 }
 
 .submit-btn {
-  width: 100%;
-  padding: 1rem;
-  background-color: #1a2980;
-  color: white;
+  padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 500;
+  border-radius: 4px;
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 1rem;
+  background-color: #667eea;
+  color: white;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
 }
 
-.submit-btn:hover:not(:disabled) {
-  background-color: #152269;
-  transform: translateY(-1px);
-}
-
-.submit-btn:disabled {
-  background-color: #a0aec0;
-  cursor: not-allowed;
+.submit-btn:hover {
+  background-color: #5a6fe4;
 }
 
 button {
@@ -260,15 +242,13 @@ button:hover:not(:disabled) {
 }
 
 .register-link {
-  text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   color: #666;
 }
 
 .register-link a {
-  color: #1a2980;
+  color: #667eea;
   text-decoration: none;
-  font-weight: 500;
 }
 
 .register-link a:hover {
@@ -277,46 +257,60 @@ button:hover:not(:disabled) {
 
 .floating-input {
   position: relative;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .floating-input input {
   width: 100%;
-  padding: 1rem;
-  border: 2px solid #e2e8f0;
-  border-radius: 8px;
-  font-size: 1rem;
-  background: white;
-  transition: all 0.3s ease;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.floating-input input:focus {
+  border-color: #667eea;
 }
 
 .floating-input label {
   position: absolute;
-  left: 1rem;
   top: 50%;
+  left: 0.75rem;
   transform: translateY(-50%);
   background: white;
-  padding: 0 0.5rem;
+  padding: 0 0.25rem;
   color: #666;
-  transition: all 0.3s ease;
-  pointer-events: none;
-}
-
-.floating-input input:focus,
-.floating-input input:not(:placeholder-shown) {
-  border-color: #1a2980;
-  outline: none;
+  transition: top 0.3s ease, font-size 0.3s ease;
 }
 
 .floating-input input:focus + label,
 .floating-input input:not(:placeholder-shown) + label {
-  top: 0;
-  font-size: 0.875rem;
-  color: #1a2980;
+  top: -0.5rem;
+  font-size: 0.75rem;
+  color: #667eea;
 }
 
 .floating-input input.is-invalid {
   border-color: #dc3545;
+}
+
+.theme-toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #667eea;
+  color: white;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+  background-color: #5a6fe4;
 }
 
 @media (max-width: 768px) {

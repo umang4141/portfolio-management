@@ -15,48 +15,13 @@ import { FooterComponent } from '../footer/footer.component';
     SidebarComponent,
     FooterComponent,
   ],
-  template: `
-    <div class="app-container">
-      <app-header></app-header>
-      <div class="main-content">
-        <app-sidebar></app-sidebar>
-        <div class="content-area">
-          <h1>Welcome to your portfolio</h1>
-          <router-outlet></router-outlet>
-        </div>
-      </div>
-      <app-footer></app-footer>
-    </div>
-  `,
-  styles: [
-    `
-      .app-container {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .main-content {
-        display: flex;
-        flex: 1;
-        margin-top: 64px;
-        margin-bottom: 60px;
-      }
-
-      .content-area {
-        flex: 1;
-        padding: 2rem;
-        background: #f8fafc;
-        overflow-y: auto;
-      }
-
-      .content-area h1 {
-        text-align: center;
-        margin-top: 2rem;
-        font-size: 2rem;
-        color: #333;
-      }
-    `,
-  ],
+  templateUrl: './main-layout.component.html',
+  styleUrls: ['./main-layout.component.css'],
 })
-export class MainLayoutComponent {}
+export class MainLayoutComponent {
+  isDarkTheme = false;
+
+  toggleTheme(): void {
+    this.isDarkTheme = !this.isDarkTheme;
+  }
+}

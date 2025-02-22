@@ -1,6 +1,6 @@
 <div class="dashboard-container">
   <!-- Hero Section -->
-  <header class="hero-section">
+  <header class="hero-section" *ngIf="!authService.isLoggedIn()">
     <nav class="navbar">
       <div class="logo">Portfolio Manager</div>
       <div class="auth-buttons">
@@ -19,7 +19,7 @@
   </header>
 
   <!-- Features Section -->
-  <section class="features">
+  <section class="features" *ngIf="!authService.isLoggedIn()">
     <h2>Key Features</h2>
     <div class="features-grid">
       <div class="feature-card">
@@ -41,11 +41,16 @@
   </section>
 
   <!-- CTA Section -->
-  <section class="cta-section">
+  <section class="cta-section" *ngIf="!authService.isLoggedIn()">
     <h2>Start Managing Your Portfolio Today</h2>
     <p>Join thousands of investors who trust our platform</p>
     <button class="btn cta-btn" (click)="navigateToRegister()">
       Get Started
     </button>
   </section>
+
+  <!-- Welcome Section -->
+  <div *ngIf="authService.isLoggedIn()" class="welcome-section">
+    <h1>Welcome back, {{ getUsername() }}</h1>
+  </div>
 </div>

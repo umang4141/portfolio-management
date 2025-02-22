@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent {
-  constructor(private router: Router) {}
+  constructor(public authService: AuthService, private router: Router) {}
 
   navigateToLogin(): void {
     this.router.navigate(['/auth/login']);
@@ -18,5 +19,10 @@ export class DashboardComponent {
 
   navigateToRegister(): void {
     this.router.navigate(['/auth/register']);
+  }
+
+  getUsername(): string | null {
+    const user = this.authService.currentUserSubject.value;
+    return user ? user.username : null;
   }
 }
