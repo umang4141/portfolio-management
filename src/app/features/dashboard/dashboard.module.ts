@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard.component';
+import { PortfolioService } from '../../core/services/portfolio.service';
+import { AuthService } from '../../core/services/auth.service';
 
 const routes: Routes = [
   {
@@ -13,8 +16,13 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    HttpClientModule,
     RouterModule.forChild(routes),
-    DashboardComponent, // Import standalone component instead of declaring it
+    DashboardComponent,
   ],
+  providers: [
+    PortfolioService,
+    AuthService
+  ]
 })
 export class DashboardModule {}

@@ -11,11 +11,11 @@ import { Router, RouterModule } from '@angular/router';
 })
 export class SidebarComponent {
   menuItems = [
-    { icon: 'fas fa-chart-line', label: 'Dashboard', route: '/dashboard' },
-    { icon: 'fas fa-wallet', label: 'Portfolio', route: '/portfolio' },
-    { icon: 'fas fa-chart-pie', label: 'Analytics', route: '/analytics' },
-    { icon: 'fas fa-cog', label: 'Settings', route: '/settings' },
-    { icon: 'fas fa-chart-bar', label: 'Stocks', route: '/app/stocks' }, // Updated route
+    { icon: 'fas fa-chart-line', label: 'Dashboard', route: '/app/dashboard' },
+    { icon: 'fas fa-wallet', label: 'Portfolio', route: '/app/portfolio' },
+    { icon: 'fas fa-chart-pie', label: 'Analytics', route: '/app/analytics' },
+    { icon: 'fas fa-chart-bar', label: 'Stocks', route: '/app/stocks' },
+    { icon: 'fas fa-cog', label: 'Settings', route: '/app/settings' },
   ];
 
   constructor(public router: Router) {}

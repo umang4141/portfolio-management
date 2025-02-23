@@ -6,8 +6,8 @@ export const routes: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./features/dashboard/dashboard.component').then(
-        (m) => m.DashboardComponent
+      import('./features/home/home.component').then(
+        (m) => m.HomeComponent
       ),
     pathMatch: 'full',
   },
@@ -38,13 +38,6 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./features/dashboard/dashboard.component').then(
             (m) => m.DashboardComponent
-          ),
-      },
-      {
-        path: 'portfolio',
-        loadComponent: () =>
-          import('./features/portfolio/portfolio.component').then(
-            (m) => m.PortfolioComponent
           ),
       },
       {
