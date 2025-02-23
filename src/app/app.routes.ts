@@ -47,6 +47,13 @@ export const routes: Routes = [
             (m) => m.PortfolioComponent
           ),
       },
+      {
+        path: 'stocks',
+        loadComponent: () =>
+          import('./features/stocks/stocks.component').then(
+            (m) => m.StocksComponent
+          ),
+      },
     ],
   },
 ];

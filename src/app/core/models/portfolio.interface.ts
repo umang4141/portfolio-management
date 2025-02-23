@@ -1,0 +1,14 @@
+export interface StockHolding {
+  symbol: string;
+  quantity: number;
+  purchasePrice: number;
+  currentPrice: number;
+}
+
+export interface PortfolioSummary {
+  totalInvestment: number;
+  currentValue: number;
+  profitLoss: number;
+  profitLossPercentage: number;
+  holdings: StockHolding[];
+}

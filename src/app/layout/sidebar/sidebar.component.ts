@@ -15,6 +15,7 @@ export class SidebarComponent {
     { icon: 'fas fa-wallet', label: 'Portfolio', route: '/portfolio' },
     { icon: 'fas fa-chart-pie', label: 'Analytics', route: '/analytics' },
     { icon: 'fas fa-cog', label: 'Settings', route: '/settings' },
+    { icon: 'fas fa-chart-bar', label: 'Stocks', route: '/app/stocks' }, // Updated route
   ];
 
   constructor(public router: Router) {}
