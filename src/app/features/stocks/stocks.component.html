@@ -1,0 +1,8 @@
+<div class="stocks-container">
+  <h1>Live Stock Data</h1>
+  <div *ngIf="isLoading" class="loading-indicator">
+    <div class="spinner"></div>
+    <p>Loading stock data...</p>
+  </div>
+  <app-stock-list *ngIf="!isLoading" [stocks]="stocks"></app-stock-list>
+</div>

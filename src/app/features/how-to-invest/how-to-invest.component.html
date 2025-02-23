@@ -1,0 +1,38 @@
+<div class="invest-container">
+  <div class="parallax-header">
+    <h1>How to Invest in Stocks</h1>
+    <p>Master the art of stock market investment</p>
+  </div>
+
+  <div class="content-container">
+    <div class="section" *ngFor="let section of sections" [ngClass]="section.type">
+      <div class="section-content">
+        <h2>{{ section.title }}</h2>
+        <p>{{ section.content }}</p>
+        
+        <div class="info-grid">
+          <div class="info-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Market Analysis</h3>
+            <p>Learn to analyze market trends</p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-balance-scale"></i>
+            <h3>Risk Management</h3>
+            <p>Understand risk vs reward</p>
+          </div>
+          <div class="info-card">
+            <i class="fas fa-chess"></i>
+            <h3>Strategy</h3>
+            <p>Develop winning strategies</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="loading-indicator" *ngIf="isLoading">
+      <div class="spinner"></div>
+      <p>Loading more insights...</p>
+    </div>
+  </div>
+</div>

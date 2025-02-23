@@ -1,21 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule],
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.css'],
+  styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
+  @Input() isDarkTheme = false;
+
   menuItems = [
     { icon: 'fas fa-chart-line', label: 'Dashboard', route: '/app/dashboard' },
     { icon: 'fas fa-wallet', label: 'Portfolio', route: '/app/portfolio' },
-    { icon: 'fas fa-chart-pie', label: 'Analytics', route: '/app/analytics' },
     { icon: 'fas fa-chart-bar', label: 'Stocks', route: '/app/stocks' },
-    { icon: 'fas fa-cog', label: 'Settings', route: '/app/settings' },
+    { icon: 'fas fa-graduation-cap', label: 'How to Invest', route: '/app/how-to-invest' },
+    { icon: 'fas fa-cog', label: 'Settings', route: '/app/settings' }
   ];
 
   constructor(public router: Router) {}

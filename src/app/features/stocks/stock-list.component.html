@@ -1,0 +1,12 @@
+<div class="stock-list">
+  <div *ngFor="let stock of stocks" class="stock-item">
+    <span class="stock-name">{{ stock.name }}</span>
+    <span class="stock-price">
+      ${{ stock.price }}
+      <i class="fas" [ngClass]="{
+        'fa-arrow-up': stock.change > 0,
+        'fa-arrow-down': stock.change < 0
+      }"></i>
+    </span>
+  </div>
+</div>

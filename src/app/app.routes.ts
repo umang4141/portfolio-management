@@ -47,6 +47,12 @@ export const routes: Routes = [
             (m) => m.StocksComponent
           ),
       },
+      {
+        path: 'how-to-invest',
+        loadComponent: () => 
+          import('./features/how-to-invest/how-to-invest.component')
+            .then(m => m.HowToInvestComponent)
+      }
     ],
   },
 ];
