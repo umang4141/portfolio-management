@@ -1,0 +1,9 @@
+<div class="tools-container">
+  <h1>Tools</h1>
+  <div class="tools-grid">
+    <div *ngFor="let tool of tools" class="tool-item">
+      <i [class]="tool.icon"></i>
+      <span>{{ tool.label }}</span>
+    </div>
+  </div>
+</div>

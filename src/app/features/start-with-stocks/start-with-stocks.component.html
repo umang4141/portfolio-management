@@ -1,0 +1,30 @@
+<div class="start-with-stocks-container">
+  <h1>Start with Stocks</h1>
+  <p>Learn about stocks with various charts and theories.</p>
+
+  <div class="chart-container">
+    <h2>Market Distribution</h2>
+    <canvas baseChart
+      [type]="'pie'"
+      [data]="pieChartData"
+      [options]="pieChartOptions">
+    </canvas>
+  </div>
+
+  <div class="chart-container">
+    <h2>Stock Performance</h2>
+    <canvas baseChart
+      [type]="'line'"
+      [data]="lineChartData"
+      [options]="lineChartOptions">
+    </canvas>
+  </div>
+
+  <div class="theory-section">
+    <h2>Theory</h2>
+    <p>Stocks represent ownership in a company and constitute a claim on part of the company's assets and earnings. 
+       There are two main types of stocks: common and preferred. Common stock entitles the owner to vote at shareholders' 
+       meetings and to receive dividends. Preferred stockholders generally do not have voting rights, but they have a 
+       higher claim on assets and earnings than the common stockholders.</p>
+  </div>
+</div>
