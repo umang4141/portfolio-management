@@ -17,17 +17,17 @@ import { PortfolioSummary } from '../../core/models/portfolio.interface';
           <div class="summary-grid">
             <div class="summary-card">
               <h3>Total Investment</h3>
-              <p class="value">${{ portfolioSummary.totalInvestment | number:'1.2-2' }}</p>
+              <p class="value">\${{ portfolioSummary.totalInvestment | number:'1.2-2' }}</p>
             </div>
             <div class="summary-card">
               <h3>Current Value</h3>
-              <p class="value">${{ portfolioSummary.currentValue | number:'1.2-2' }}</p>
+              <p class="value">\${{ portfolioSummary.currentValue | number:'1.2-2' }}</p>
             </div>
             <div class="summary-card">
               <h3>Profit/Loss</h3>
               <p class="value" [class.profit]="portfolioSummary.profitLoss > 0" 
                              [class.loss]="portfolioSummary.profitLoss < 0">
-                ${{ portfolioSummary.profitLoss | number:'1.2-2' }}
+                \${{ portfolioSummary.profitLoss | number:'1.2-2' }}
                 ({{ portfolioSummary.profitLossPercentage | number:'1.2-2' }}%)
               </p>
             </div>
@@ -51,12 +51,12 @@ import { PortfolioSummary } from '../../core/models/portfolio.interface';
                   <tr>
                     <td>{{ holding.symbol }}</td>
                     <td>{{ holding.quantity }}</td>
-                    <td>${{ holding.purchasePrice | number:'1.2-2' }}</td>
-                    <td>${{ holding.currentPrice | number:'1.2-2' }}</td>
-                    <td>${{ holding.currentPrice * holding.quantity | number:'1.2-2' }}</td>
+                    <td>\${{ holding.purchasePrice | number:'1.2-2' }}</td>
+                    <td>\${{ holding.currentPrice | number:'1.2-2' }}</td>
+                    <td>\${{ holding.currentPrice * holding.quantity | number:'1.2-2' }}</td>
                     <td [class.profit]="(holding.currentPrice - holding.purchasePrice) * holding.quantity > 0"
                         [class.loss]="(holding.currentPrice - holding.purchasePrice) * holding.quantity < 0">
-                      ${{ (holding.currentPrice - holding.purchasePrice) * holding.quantity | number:'1.2-2' }}
+                      \${{ (holding.currentPrice - holding.purchasePrice) * holding.quantity | number:'1.2-2' }}
                     </td>
                   </tr>
                 }
@@ -65,10 +65,13 @@ import { PortfolioSummary } from '../../core/models/portfolio.interface';
           </div>
         }
       </div>
-      <!-- ... existing template code ... -->
     </div>
   `,
   styles: [`
+    .dashboard-container {
+      padding: 2rem;
+    }
+
     .portfolio-summary {
       padding: 2rem;
       background: white;
@@ -96,8 +99,13 @@ import { PortfolioSummary } from '../../core/models/portfolio.interface';
       margin: 0.5rem 0;
     }
 
-    .profit { color: #28a745; }
-    .loss { color: #dc3545; }
+    .profit { 
+      color: #28a745; 
+    }
+    
+    .loss { 
+      color: #dc3545; 
+    }
 
     .holdings-table {
       margin-top: 2rem;
