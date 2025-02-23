@@ -7,6 +7,11 @@
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
+.sidebar.dark-theme {
+  background: #2c3e50;
+  border-color: #1a1a1a;
+}
+
 .menu-items {
   display: flex;
   flex-direction: column;
@@ -30,11 +35,17 @@
   border: 1px solid #e2e8f0;
 }
 
-.menu-item:hover {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.menu-item.dark-theme {
+  background: #1a1a1a;
   color: white;
-  border-color: transparent;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.menu-item:hover {
+  background: #e2e8f0;
+}
+
+.menu-item.dark-theme:hover {
+  background: #3a3a3a;
 }
 
 .menu-item.active {
@@ -50,31 +61,20 @@
   transition: transform 0.3s ease;
 }
 
+.menu-item.dark-theme i {
+  color: white;
+}
+
 .menu-item:hover i,
 .menu-item.active i {
   transform: scale(1.2);
   color: white;
 }
 
-.sidebar.dark-theme {
-  background: #2c3e50;
-  border-color: #1a1a1a;
+.menu-item span {
+  color: inherit; /* Ensure text color inherits from parent */
 }
 
-.sidebar.dark-theme .menu-item {
-  background: #2c3e50;
-  color: white;
-  border-color: #1a1a1a;
-}
-
-.sidebar.dark-theme .menu-item:hover,
-.sidebar.dark-theme .menu-item.active {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border-color: transparent;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-}
-
-.sidebar.dark-theme .menu-item i {
-  color: white;
+.menu-item.dark-theme span {
+  color: white; /* Ensure text color is white in dark theme */
 }

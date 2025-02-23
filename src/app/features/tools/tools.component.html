@@ -1,7 +1,7 @@
-<div class="tools-container">
+<div class="tools-container" [ngClass]="{ 'dark-theme': isDarkTheme }">
   <h1>Tools</h1>
   <div class="tools-grid">
-    <div *ngFor="let tool of tools" class="tool-item">
+    <div *ngFor="let tool of tools" class="tool-item" [ngClass]="{ 'dark-theme': isDarkTheme }">
       <i [class]="tool.icon"></i>
       <span>{{ tool.label }}</span>
     </div>

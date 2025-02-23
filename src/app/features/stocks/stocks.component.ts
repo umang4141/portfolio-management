@@ -1,7 +1,8 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { StockListComponent } from './stock-list.component';
+import { StockChartComponent } from './stock-chart.component';
 import { interval, Subscription } from 'rxjs';
 
 @Component({
@@ -12,6 +13,7 @@ import { interval, Subscription } from 'rxjs';
   styleUrls: ['./stocks.component.css'],
 })
 export class StocksComponent implements OnInit, OnDestroy {
+  @Input() isDarkTheme = false;
   stocks: any[] | null = null;
   isLoading = true;
   private subscription: Subscription | null = null;

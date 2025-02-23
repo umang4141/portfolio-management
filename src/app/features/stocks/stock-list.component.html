@@ -1,5 +1,5 @@
 <div class="stock-list">
-  <div *ngFor="let stock of stocks" class="stock-item">
+  <div *ngFor="let stock of stocks" class="stock-item" [ngClass]="{ 'dark-theme': isDarkTheme }">
     <span class="stock-name">{{ stock.name }}</span>
     <span class="stock-price">
       ${{ stock.price }}

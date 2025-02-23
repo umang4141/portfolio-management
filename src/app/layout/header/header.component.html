@@ -1,13 +1,13 @@
-<header class="header">
+<header class="header" [ngClass]="{ 'dark-theme': isDarkTheme }">
   <div class="header-left">
     <button class="menu-toggle">
-      <i class="fas fa-bars"></i>
+      <!-- <i class="fas fa-bars"></i> -->
     </button>
     <h1>Portfolio Management</h1>
   </div>
 
   <div class="header-right">
-    <button class="profile-btn">
+    <button class="profile-btn" [ngClass]="{ 'dark-theme': isDarkTheme }">
       <i class="fas fa-user-circle"></i>
       <span>{{ getUsername() }}</span>
     </button>

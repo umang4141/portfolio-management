@@ -6,6 +6,22 @@
   background: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   height: 64px;
+  transition: all 0.3s ease;
+}
+
+.header.dark-theme {
+  background: #1a1a1a;
+  color: white;
+}
+
+.header h1 {
+  margin: 0;
+  color: #2c3e50;
+  transition: color 0.3s ease;
+}
+
+.header.dark-theme h1 {
+  color: white;
 }
 
 .header-left {
@@ -32,9 +48,9 @@
   transition: all 0.3s ease;
 }
 
-.menu-toggle:hover,
-.logout-btn:hover {
-  background: rgba(26, 41, 128, 0.1);
+.dark-theme .menu-toggle,
+.dark-theme .logout-btn {
+  color: white;
 }
 
 .profile-btn {
@@ -47,6 +63,25 @@
   border-radius: 6px;
   cursor: pointer;
   transition: all 0.3s ease;
+  color: #2c3e50;
+}
+
+.profile-btn.dark-theme {
+  color: white;
+  border-color: #3a3a3a;
+}
+
+.profile-btn span {
+  color: inherit;
+}
+
+.profile-btn i {
+  color: inherit;
+}
+
+.menu-toggle:hover,
+.logout-btn:hover {
+  background: rgba(26, 41, 128, 0.1);
 }
 
 .profile-btn:hover {

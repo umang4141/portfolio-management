@@ -1,8 +1,11 @@
 <div class="app-container" [ngClass]="{ 'dark-theme': isDarkTheme }">
-  <app-header></app-header>
-  <button class="theme-toggle-btn" (click)="toggleTheme()">
-    {{ isDarkTheme ? "Light Theme" : "Dark Theme" }}
-  </button>
+  <app-header [isDarkTheme]="isDarkTheme"></app-header>
+  <div class="theme-toggle-container">
+    <button class="theme-toggle-btn" [ngClass]="{ 'dark-theme': isDarkTheme }" (click)="toggleTheme()">
+      <i class="fas" [ngClass]="isDarkTheme ? 'fa-sun' : 'fa-moon'"></i>
+      {{ isDarkTheme ? 'Light Mode' : 'Dark Mode' }}
+    </button>
+  </div>
   <div class="main-content">
     <app-sidebar [isDarkTheme]="isDarkTheme"></app-sidebar>
     <div class="content-area">

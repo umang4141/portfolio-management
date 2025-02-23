@@ -5,12 +5,22 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+.start-with-stocks-container.dark-theme {
+  background: #2c3e50;
+  color: white;
+}
+
 .chart-container {
   margin-bottom: 2rem;
   padding: 1rem;
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.chart-container.dark-theme {
+  background: #1a1a1a;
+  color: white;
 }
 
 .theory-section {
@@ -21,12 +31,38 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+.theory-section.dark-theme {
+  background: #1a1a1a;
+  color: white;
+}
+
+.embedded-content {
+  margin-top: 2rem;
+}
+
+.embedded-content h2 {
+  margin-bottom: 1rem;
+}
+
+.embedded-content iframe {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 h1, h2 {
   color: #2d3748;
   margin-bottom: 1rem;
 }
 
+h1.dark-theme, h2.dark-theme {
+  color: white;
+}
+
 p {
   color: #4a5568;
   line-height: 1.6;
+}
+
+p.dark-theme {
+  color: white;
 }

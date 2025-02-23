@@ -11,15 +11,21 @@
   border: 1px solid #e2e8f0;
   border-radius: 8px;
   background: white;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
 
-.stock-item:hover {
-  background: #f8f9fa;
+.stock-item.dark-theme {
+  background: #1a1a1a;
+  border-color: #3a3a3a;
 }
 
 .stock-name {
   font-weight: 600;
+  color: #2d3748;
+}
+
+.stock-item.dark-theme .stock-name {
+  color: white;
 }
 
 .stock-price {
@@ -27,14 +33,18 @@
   color: #4a5568;
 }
 
+.stock-item.dark-theme .stock-price {
+  color: white;
+}
+
 .stock-price i {
   margin-left: 0.5rem;
 }
 
 .fa-arrow-up {
-  color: #48bb78;
+  color: #48bb78 !important;
 }
 
 .fa-arrow-down {
-  color: #f56565;
+  color: #f56565 !important;
 }

@@ -28,19 +28,40 @@
   background: #1a1a1a;
 }
 
+.theme-toggle-container {
+  position: absolute;
+  top: 120px; /* Increased from 90px to move button further down */
+  left: 2rem;
+  z-index: 1000;
+}
+
 .theme-toggle-btn {
-  margin: 1rem;
-  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
   border: none;
-  background: #667eea;
-  color: white;
-  border-radius: 4px;
+  border-radius: 8px;
+  background: white;
+  color: #2d3748;
+  font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle-btn.dark-theme {
+  background: #1a1a1a;
+  color: white;
 }
 
 .theme-toggle-btn:hover {
-  background: #5a67d8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle-btn i {
+  font-size: 1.1rem;
 }
 
 /* Additional styles for dark theme */

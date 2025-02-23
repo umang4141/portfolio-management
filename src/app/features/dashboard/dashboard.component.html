@@ -1,8 +1,13 @@
 <div class="dashboard-container" [ngClass]="{ 'dark-theme': isDarkTheme }">
+  <button class="theme-toggle-btn" [ngClass]="{ 'dark-theme': isDarkTheme }" (click)="toggleTheme()">
+    <i class="fas" [ngClass]="isDarkTheme ? 'fa-sun' : 'fa-moon'"></i>
+    {{ isDarkTheme ? 'Light Mode' : 'Dark Mode' }}
+  </button>
+
   <!-- Hero Section -->
   <header class="hero-section" *ngIf="!authService.isLoggedIn()">
-    <nav class="navbar">
-      <div class="logo">Portfolio Manager</div>
+    <nav class="navbar" [ngClass]="{ 'dark-theme': isDarkTheme }">
+      <div class="logo" [ngClass]="{ 'dark-theme': isDarkTheme }">Portfolio Manager</div>
       <div class="auth-buttons">
         <button class="btn login-btn" (click)="navigateToLogin()">
           Sign In
@@ -96,22 +101,22 @@
     <table>
       <thead>
         <tr>
-          <th>Symbol</th>
-          <th>Quantity</th>
-          <th>Purchase Price</th>
-          <th>Current Price</th>
-          <th>Total Value</th>
-          <th>Profit/Loss</th>
+          <th [ngClass]="{ 'dark-theme': isDarkTheme }">Symbol</th>
+          <th [ngClass]="{ 'dark-theme': isDarkTheme }">Quantity</th>
+          <th [ngClass]="{ 'dark-theme': isDarkTheme }">Purchase Price</th>
+          <th [ngClass]="{ 'dark-theme': isDarkTheme }">Current Price</th>
+          <th [ngClass]="{ 'dark-theme': isDarkTheme }">Total Value</th>
+          <th [ngClass]="{ 'dark-theme': isDarkTheme }">Profit/Loss</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let holding of paginatedHoldings">
-          <td>{{ holding.symbol }}</td>
-          <td>{{ holding.quantity }}</td>
-          <td>${{ holding.purchasePrice | number:'1.2-2' }}</td>
-          <td>${{ holding.currentPrice | number:'1.2-2' }}</td>
-          <td>${{ holding.currentPrice * holding.quantity | number:'1.2-2' }}</td>
-          <td [class.profit]="(holding.currentPrice - holding.purchasePrice) * holding.quantity > 0"
+          <td [ngClass]="{ 'dark-theme': isDarkTheme }">{{ holding.symbol }}</td>
+          <td [ngClass]="{ 'dark-theme': isDarkTheme }">{{ holding.quantity }}</td>
+          <td [ngClass]="{ 'dark-theme': isDarkTheme }">${{ holding.purchasePrice | number:'1.2-2' }}</td>
+          <td [ngClass]="{ 'dark-theme': isDarkTheme }">${{ holding.currentPrice | number:'1.2-2' }}</td>
+          <td [ngClass]="{ 'dark-theme': isDarkTheme }">${{ holding.currentPrice * holding.quantity | number:'1.2-2' }}</td>
+          <td [ngClass]="{ 'dark-theme': isDarkTheme }" [class.profit]="(holding.currentPrice - holding.purchasePrice) * holding.quantity > 0"
               [class.loss]="(holding.currentPrice - holding.purchasePrice) * holding.quantity < 0">
             ${{ (holding.currentPrice - holding.purchasePrice) * holding.quantity | number:'1.2-2' }}
           </td>
@@ -120,11 +125,12 @@
     </table>
 
     <!-- Pagination -->
-    <div class="pagination">
+    <div class="pagination" [ngClass]="{ 'dark-theme': isDarkTheme }">
       <button 
         [disabled]="pagination.currentPage === 1"
         (click)="changePage(pagination.currentPage - 1)"
         class="page-btn"
+        [ngClass]="{ 'dark-theme': isDarkTheme }"
       >
         Previous
       </button>
@@ -135,6 +141,7 @@
         [disabled]="pagination.currentPage >= Math.ceil(pagination.totalItems / pagination.pageSize)"
         (click)="changePage(pagination.currentPage + 1)"
         class="page-btn"
+        [ngClass]="{ 'dark-theme': isDarkTheme }"
       >
         Next
       </button>

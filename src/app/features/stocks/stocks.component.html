@@ -1,8 +1,8 @@
-<div class="stocks-container">
+<div class="stocks-container" [ngClass]="{ 'dark-theme': isDarkTheme }">
   <h1>Live Stock Data</h1>
-  <div *ngIf="isLoading" class="loading-indicator">
+  <div *ngIf="isLoading" class="loading-indicator" [ngClass]="{ 'dark-theme': isDarkTheme }">
     <div class="spinner"></div>
     <p>Loading stock data...</p>
   </div>
-  <app-stock-list *ngIf="!isLoading" [stocks]="stocks"></app-stock-list>
+  <app-stock-list *ngIf="!isLoading" [stocks]="stocks" [isDarkTheme]="isDarkTheme"></app-stock-list>
 </div>

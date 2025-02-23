@@ -1,12 +1,46 @@
+.theme-toggle-btn {
+  position: absolute;
+  top: 120px;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  background: white;
+  color: #2d3748;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.theme-toggle-btn.dark-theme {
+  background: #1a1a1a;
+  color: white;
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.theme-toggle-btn i {
+  font-size: 1.1rem;
+}
+
 .dashboard-container {
   min-height: 100vh;
   background-color: #f8f9fa;
   padding: 2rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .dashboard-container.dark-theme {
   background-color: #2c3e50;
+  color: white;
 }
 
 .dashboard-content {
@@ -182,30 +216,41 @@
   background: white;
   border-radius: 12px;
   padding: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.2s ease, background-color 0.3s ease, color 0.3s ease;
-}
-
-.summary-card:hover {
-  transform: translateY(-5px);
+  transition: all 0.3s ease;
 }
 
 .summary-card.dark-theme {
   background: #1a1a1a;
-  color: white;
+  border: 1px solid #3a3a3a;
+}
+
+.summary-card .card-content h3 {
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.summary-card.dark-theme .card-content h3 {
+  color: #ffffff;
+}
+
+.summary-card .card-content .value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.summary-card.dark-theme .card-content .value {
+  color: #ffffff;
 }
 
 .card-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  color: #667eea;
+}
+
+.summary-card.dark-theme .card-icon {
+  color: #667eea;
 }
 
 .total-investment .card-icon {
@@ -223,6 +268,13 @@
   color: #ed8936;
 }
 
+.total-investment.dark-theme,
+.current-value.dark-theme,
+.profit-loss.dark-theme {
+  background: #1a1a1a;
+  color: white;
+}
+
 .filter-section {
   background: white;
   border-radius: 12px;
@@ -234,6 +286,28 @@
 
 .filter-section.dark-theme {
   background: #1a1a1a;
+  color: white;
+}
+
+.filter-section.dark-theme .filter-input {
+  background: #2c3e50;
+  color: white;
+  border-color: #3a3a3a;
+}
+
+.filter-section.dark-theme .sort-select {
+  background: #2c3e50;
+  color: white;
+  border-color: #3a3a3a;
+}
+
+.filter-section.dark-theme .sort-direction-btn {
+  background: #2c3e50;
+  color: white;
+  border-color: #3a3a3a;
+}
+
+.filter-section.dark-theme i {
   color: white;
 }
 
@@ -322,6 +396,21 @@
   color: white;
 }
 
+.holdings-table.dark-theme th {
+  background: #2c3e50;
+  color: white;
+  border-color: #3a3a3a;
+}
+
+.holdings-table.dark-theme td {
+  color: white;
+  border-color: #3a3a3a;
+}
+
+.holdings-table.dark-theme tr:hover {
+  background: #2c3e50;
+}
+
 table {
   width: 100%;
   border-collapse: separate;
@@ -340,11 +429,21 @@ th {
   border-bottom: 2px solid #e2e8f0;
 }
 
+th.dark-theme {
+  background: #2c3e50;
+  color: white;
+}
+
 td {
   padding: 1rem;
   border-bottom: 1px solid #e2e8f0;
   color: #2d3748;
   letter-spacing: 0.01em;
+}
+
+td.dark-theme {
+  border-bottom: 1px solid #3a3a3a;
+  color: white;
 }
 
 td:not(:last-child) {
@@ -356,13 +455,17 @@ tbody tr:hover {
   transition: background-color 0.2s ease;
 }
 
+tbody tr.dark-theme:hover {
+  background-color: #3a3a3a;
+}
+
 .profit {
-  color: #48bb78;
+  color: #48bb78 !important;
   font-weight: 600;
 }
 
 .loss {
-  color: #f56565;
+  color: #f56565 !important;
   font-weight: 600;
 }
 
@@ -376,6 +479,10 @@ tbody tr:hover {
   border-top: 1px solid #e2e8f0;
 }
 
+.pagination.dark-theme {
+  border-top: 1px solid #3a3a3a;
+}
+
 .page-btn {
   padding: 0.5rem 1rem;
   border: 1px solid #e2e8f0;
@@ -387,10 +494,21 @@ tbody tr:hover {
   transition: all 0.2s ease;
 }
 
+.page-btn.dark-theme {
+  background: #1a1a1a;
+  border: 1px solid #3a3a3a;
+  color: white;
+}
+
 .page-btn:hover:not([disabled]) {
   background: #667eea;
   color: white;
   border-color: #667eea;
+}
+
+.page-btn.dark-theme:hover:not([disabled]) {
+  background: #5a6fe4;
+  border-color: #5a6fe4;
 }
 
 .page-btn[disabled] {
@@ -401,6 +519,20 @@ tbody tr:hover {
 .page-info {
   color: #4a5568;
   font-weight: 500;
+}
+
+.page-info.dark-theme {
+  color: white;
+}
+
+.pagination.dark-theme .page-btn {
+  background: #2c3e50;
+  color: white;
+  border-color: #3a3a3a;
+}
+
+.pagination.dark-theme .page-info {
+  color: white;
 }
 
 @media (max-width: 768px) {

@@ -1,6 +1,6 @@
 <nav class="sidebar" [ngClass]="{ 'dark-theme': isDarkTheme }">
   <div class="menu-items">
-    <button class="menu-item" *ngFor="let item of menuItems" [class.active]="router.url === item.route" (click)="navigate(item.route)">
+    <button class="menu-item" *ngFor="let item of menuItems" [class.active]="router.url === item.route" (click)="navigate(item.route)" [ngClass]="{ 'dark-theme': isDarkTheme }">
       <i [class]="item.icon"></i>
       <span>{{ item.label }}</span>
     </button>

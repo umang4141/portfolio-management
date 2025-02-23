@@ -21,6 +21,7 @@ export class SettingsComponent {
 
   toggleTheme(): void {
     this.isDarkTheme = !this.isDarkTheme;
+    // You might want to emit this change to a service or parent component
   }
 
   changeLanguage(language: string): void {

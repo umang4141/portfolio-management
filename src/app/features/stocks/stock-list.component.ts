@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common';
 })
 export class StockListComponent implements OnChanges {
   @Input() stocks: any[] | null = null;
+  @Input() isDarkTheme = false;
 
   ngOnChanges(): void {
     // Handle any changes to the stocks input

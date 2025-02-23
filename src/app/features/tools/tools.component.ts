@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,6 +9,8 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./tools.component.css']
 })
 export class ToolsComponent {
+  @Input() isDarkTheme = false;
+  
   tools = [
     { icon: 'fas fa-cogs', label: 'Execution Algos' },
     { icon: 'fas fa-lightbulb', label: 'Research Ideas' },

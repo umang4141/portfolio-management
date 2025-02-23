@@ -3,20 +3,11 @@
   <p>Learn about stocks with various charts and theories.</p>
 
   <div class="chart-container">
-    <h2>Market Distribution</h2>
+    <h2>Stock Prices</h2>
     <canvas baseChart
-      [type]="'pie'"
-      [data]="pieChartData"
-      [options]="pieChartOptions">
-    </canvas>
-  </div>
-
-  <div class="chart-container">
-    <h2>Stock Performance</h2>
-    <canvas baseChart
-      [type]="'line'"
-      [data]="lineChartData"
-      [options]="lineChartOptions">
+      [type]="barChartType"
+      [data]="barChartData"
+      [options]="barChartOptions">
     </canvas>
   </div>
 
@@ -26,5 +17,13 @@
        There are two main types of stocks: common and preferred. Common stock entitles the owner to vote at shareholders' 
        meetings and to receive dividends. Preferred stockholders generally do not have voting rights, but they have a 
        higher claim on assets and earnings than the common stockholders.</p>
+    <p>Investing in stocks can be a great way to build wealth over time. However, it's important to understand the risks 
+       involved and to diversify your investments to mitigate those risks. Always do your research and consider consulting 
+       with a financial advisor before making any investment decisions.</p>
+  </div>
+
+  <div class="embedded-content">
+    <h2>Additional Resources</h2>
+    <iframe src="https://www.columbia.edu/~tmd2142/5-best-stock-research-websites.html" width="100%" height="600px" frameborder="0"></iframe>
   </div>
 </div>
