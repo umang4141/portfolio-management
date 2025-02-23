@@ -1,0 +1,47 @@
+<div class="settings-container" [ngClass]="{ 'dark-theme': isDarkTheme }">
+  <h1>Settings</h1>
+
+  <div class="setting-item">
+    <label for="theme-toggle">Dark Theme</label>
+    <input type="checkbox" id="theme-toggle" [(ngModel)]="isDarkTheme" (change)="toggleTheme()">
+  </div>
+
+  <div class="setting-item">
+    <label for="language-select">Language</label>
+    <select id="language-select" [(ngModel)]="language" (change)="changeLanguage(language)">
+      <option value="en">English</option>
+      <option value="hi">Hindi</option>
+      <option value="de">German</option>
+    </select>
+  </div>
+
+  <div class="setting-item">
+    <label for="notifications-toggle">Enable Notifications</label>
+    <input type="checkbox" id="notifications-toggle" [(ngModel)]="notificationsEnabled" (change)="toggleNotifications()">
+  </div>
+
+  <div class="setting-item">
+    <label for="auto-update-toggle">Enable Auto Update</label>
+    <input type="checkbox" id="auto-update-toggle" [(ngModel)]="autoUpdateEnabled" (change)="toggleAutoUpdate()">
+  </div>
+
+  <div class="setting-item">
+    <label for="privacy-mode-toggle">Enable Privacy Mode</label>
+    <input type="checkbox" id="privacy-mode-toggle" [(ngModel)]="privacyModeEnabled" (change)="togglePrivacyMode()">
+  </div>
+
+  <div class="setting-item">
+    <label for="data-saver-toggle">Enable Data Saver</label>
+    <input type="checkbox" id="data-saver-toggle" [(ngModel)]="dataSaverEnabled" (change)="toggleDataSaver()">
+  </div>
+
+  <div class="setting-item">
+    <label for="location-access-toggle">Enable Location Access</label>
+    <input type="checkbox" id="location-access-toggle" [(ngModel)]="locationAccessEnabled" (change)="toggleLocationAccess()">
+  </div>
+
+  <div class="setting-item">
+    <label for="backup-toggle">Enable Backup</label>
+    <input type="checkbox" id="backup-toggle" [(ngModel)]="backupEnabled" (change)="toggleBackup()">
+  </div>
+</div>

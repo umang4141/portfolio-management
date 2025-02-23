@@ -52,6 +52,13 @@ export const routes: Routes = [
         loadComponent: () => 
           import('./features/how-to-invest/how-to-invest.component')
             .then(m => m.HowToInvestComponent)
+      },
+      {
+        path: 'settings',
+        loadComponent: () =>
+          import('./features/settings/settings.component').then(
+            (m) => m.SettingsComponent
+          ),
       }
     ],
   },
